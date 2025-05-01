@@ -1,0 +1,46 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="neuroseg",
+    version="0.1.0",
+    description="Advanced fluorescent neuron segmentation with deep learning",
+    author="Sukallin Almond Sugumalwang",
+    author_email="almond.sugumalwang@gmail.com",
+    url="https://github.com/Almond-Sug/neuroseg",
+    packages=find_packages(),
+    python_requires=">=3.8",
+    install_requires=[
+        "torch>=1.9.0",
+        "torchvision>=0.10.0",
+        "timm>=0.5.4",
+        "opencv-python>=4.5.0",
+        "scikit-image>=0.18.0",
+        "scikit-learn>=1.0.0",
+        "numpy>=1.20.0",
+        "scipy>=1.7.0",
+        "matplotlib>=3.4.0",
+        "albumentations>=1.1.0",
+        "tqdm>=4.60.0",
+        "pyyaml>=6.0",
+        "tensorboard>=2.8.0",
+        "fastapi>=0.80.0",
+        "uvicorn>=0.17.0",
+        "python-multipart>=0.0.5",
+        "pillow>=8.3.0",
+    ],
+    entry_points={
+        "console_scripts": [
+            "neuroseg-train=scripts.train:main",
+            "neuroseg-evaluate=scripts.evaluate:main",
+            "neuroseg-predict=scripts.predict:main",
+            "neuroseg-visualize=scripts.visualize:main",
+        ],
+    },
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Science/Research",
+        "Topic :: Scientific/Engineering :: Medical Science Apps.",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+    ],
+)
